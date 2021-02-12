@@ -18,6 +18,10 @@ class TweetsController < ApplicationController
     tweet.destroy
   end
 
+  def edit
+    @tweet = Tweet.find(params[:id])
+  end
+
   private #7つのアクションで使用され、このクラス内でのみ使うことのできるメソッド
   def tweet_params
     params.require(:tweet).permit(:name, :image, :text)
